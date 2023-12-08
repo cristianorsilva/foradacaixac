@@ -7,7 +7,7 @@ dev_target="16.4"
 
 date_time_run=$(date +"%d_%m_%Y %H:%M:%S")
 
-patrol build ios --target integration_test/tests/pix --release
+patrol build ios --target integration_test/tests/login_test.dart --release
 
 pushd $product
 zip -r "ios_tests.zip" "Release-iphoneos" "Runner_iphoneos$dev_target-arm64.xctestrun"

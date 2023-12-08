@@ -34,18 +34,18 @@ dependencies:
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^1.0.2
+  cupertino_icons: ^1.0.6
   easy_mask: ^2.0.1
   cpf_cnpj_validator: ^2.0.0
-  table_calendar: ^3.0.4
-  sqflite: ^2.0.0+4
-  permission_handler: ^10.2.0
+  table_calendar: ^3.0.9
+  sqflite: ^2.3.0
+  permission_handler: ^11.1.0
   email_validator: ^2.1.17
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  patrol: ^2.2.4
+  patrol: ^3.1.0
 
 patrol:
   app_name: Fora da Caixa

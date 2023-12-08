@@ -4,7 +4,7 @@ import '../../screens/login_not_remembered_screen.dart';
 
 void main() {
 
-  patrolTest('Wrong Password informed', nativeAutomation: true, ($) async {
+  patrolTest('Wrong Password informed', ($) async {
     await $.pumpWidgetAndSettle(const MyApp());
     await LoginNotRememberedScreen().informUserAndPassword($, '92903540039', '172830');
     await LoginNotRememberedScreen().tapButtonLogin($);

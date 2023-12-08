@@ -5,7 +5,7 @@ extension CheckCompareTextResults on String {
   void checkCompareResults(List<String> list) {}
 }
 
-extension CheckText on PatrolTester {
+extension CheckText on PatrolIntegrationTester {
   void checkTextOnTextWidgets(Set<(Function, String)> setFunctionString) {
     String result = '';
 

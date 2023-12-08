@@ -153,7 +153,7 @@ class _AccountViewState extends State<AccountView> {
                     ),
                     Text(
                       _listNameUserToByTransaction.isNotEmpty ? _listNameUserToByTransaction[index] : 'Erro',
-                      style: Theme.of(context).textTheme.headline6,
+                      style: Theme.of(context).textTheme.titleLarge,
                     ),
                     Text(putCurrencyMask(_listUserTransaction[index].value), style: Theme.of(context).textTheme.headline6),
                     const Padding(

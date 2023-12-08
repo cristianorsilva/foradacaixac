@@ -15,7 +15,7 @@ import '../../screens/transfer/verify_data_screen.dart';
 import '../../share/test_extensions.dart';
 
 void main() {
-  patrolTest('Validate the "Receipt" screen', nativeAutomation: true, ($) async {
+  patrolTest('Validate the "Receipt" screen', ($) async {
     await $.pumpWidgetAndSettle(const MyApp());
     //performs login
     await LoginNotRememberedScreen().informUserAndPassword($, '92903540039', '172839');

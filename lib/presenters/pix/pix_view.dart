@@ -88,7 +88,7 @@ class _PixViewState extends State<PixView> {
   Widget customCardPix(String labelButton, String imageName, Type page, String pageTitle, String key) {
     return SizedBox(
         width: 105,
-        height: 105,
+        height: 120,
         child: Card(
           child: InkWell(
             key: Key(key),
@@ -105,7 +105,7 @@ class _PixViewState extends State<PixView> {
                   padding: const EdgeInsets.only(left: 5, bottom: 5, top: 15),
                   child: Text(
                     labelButton,
-                    style: Theme.of(context).textTheme.bodyText1,
+                    style: Theme.of(context).textTheme.bodyLarge,
                     textAlign: TextAlign.center,
                   ),
                 ),

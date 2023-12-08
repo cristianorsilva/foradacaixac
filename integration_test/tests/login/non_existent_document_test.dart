@@ -4,7 +4,7 @@ import '../../screens/login_not_remembered_screen.dart';
 
 void main() {
 
-  patrolTest('Nonexistent Document informed', nativeAutomation: true, ($) async {
+  patrolTest('Nonexistent Document informed', ($) async {
     await $.pumpWidgetAndSettle(const MyApp());
     await LoginNotRememberedScreen().informUserAndPassword($, '90691216037', '172839');
     await LoginNotRememberedScreen().tapButtonLogin($);

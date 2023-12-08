@@ -19,7 +19,7 @@ class CircularButtonFC extends StatelessWidget {
       children: [
         SizedBox(
             width: 60,
-            height: 60,
+            height: 50,
             child: Card(
               shape: const CircleBorder(),
               clipBehavior: Clip.hardEdge,
@@ -49,7 +49,7 @@ class CircularButtonFC extends StatelessWidget {
         Text(
           label,
           textAlign: TextAlign.center,
-          style: Theme.of(context).textTheme.bodyText1,
+          style: Theme.of(context).textTheme.bodyLarge,
         )
       ],
     );
