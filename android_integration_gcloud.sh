@@ -1,7 +1,7 @@
 flutter clean
 flutter pub get
 
-date_time_run=$(date +"%d_%m_%Y %H:%M:%S")
+date_time_run=$(date +"%d_%m_%Y_%H:%M:%S")
 
 patrol build android --target integration_test/tests/pix
 

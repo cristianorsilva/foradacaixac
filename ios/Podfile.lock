@@ -4,22 +4,19 @@ PODS:
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
   - FMDB/standard (2.7.5)
-  - HTTPParserC (2.9.4)
   - patrol (0.0.1):
+    - CocoaAsyncSocket (~> 7.6)
     - Flutter
-    - Telegraph (~> 0.30.0)
+    - FlutterMacOS
   - permission_handler_apple (9.1.1):
     - Flutter
   - sqflite (0.0.3):
     - Flutter
     - FMDB (>= 2.7.5)
-  - Telegraph (0.30.0):
-    - CocoaAsyncSocket (~> 7.6)
-    - HTTPParserC (~> 2.9)
 
 DEPENDENCIES:
   - Flutter (from `Flutter`)
-  - patrol (from `.symlinks/plugins/patrol/ios`)
+  - patrol (from `.symlinks/plugins/patrol/darwin`)
   - permission_handler_apple (from `.symlinks/plugins/permission_handler_apple/ios`)
   - sqflite (from `.symlinks/plugins/sqflite/ios`)
 
@@ -27,14 +24,12 @@ SPEC REPOS:
   trunk:
     - CocoaAsyncSocket
     - FMDB
-    - HTTPParserC
-    - Telegraph
 
 EXTERNAL SOURCES:
   Flutter:
     :path: Flutter
   patrol:
-    :path: ".symlinks/plugins/patrol/ios"
+    :path: ".symlinks/plugins/patrol/darwin"
   permission_handler_apple:
     :path: ".symlinks/plugins/permission_handler_apple/ios"
   sqflite:
@@ -42,14 +37,12 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
-  Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
+  Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
-  HTTPParserC: aea14c3d2d4ac5beb3988781daa36dfa62e0d9ef
-  patrol: 792c0bb6cc4d552fc8b37f49266341c39e659b4d
+  patrol: 3e21d514020dbee24b3e3383caac9e8e051292ac
   permission_handler_apple: e76247795d700c14ea09e3a2d8855d41ee80a2e6
   sqflite: 31f7eba61e3074736dff8807a9b41581e4f7f15a
-  Telegraph: 12576b119324138e4929792af9e5a1085c2ecbc1
 
-PODFILE CHECKSUM: 1c0a9ae97403853eb61cad41685b155c49bb7118
+PODFILE CHECKSUM: 32180f172a8bbc38bce666dd419aa319a9d7c94a
 
 COCOAPODS: 1.14.3
