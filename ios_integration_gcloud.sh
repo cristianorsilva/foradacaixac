@@ -25,3 +25,6 @@ gcloud firebase test ios run --test "build/ios_integ/Build/Products/ios_tests.zi
 # para pegar a lista de dispositivos disponíveis: gcloud firebase test ios models list
 # para pegar o caminho do results-bucket, ir no firebase storage, e ver os detalhes do projeto. Copie a url criada
 # para pegar os dispositivos locais: patrol devices
+# IMPORTANTE ter um device físico pareado no mac para que funcione, do contrario:
+        #2024-04-02 13:19:49.871 xcodebuild[31520:287081] Writing error result bundle to /var/folders/qg/rlzyvlgj47zfkwq9wfldsjjw0000gn/T/ResultBundle_2024-02-04_13-19-0049.xcresult
+        #xcodebuild: error: Failed writing xctestrun file: The folder “Runner_iphoneos17.2-arm64.xctestrun” doesn’t exist..
