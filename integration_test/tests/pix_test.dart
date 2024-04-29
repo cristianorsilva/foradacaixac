@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:flutter_test/flutter_test.dart';
 import 'package:foradacaixac/database/pix_key_type.dart';
 import 'package:foradacaixac/main.dart';
 
@@ -17,7 +18,6 @@ import '../share/test_extensions.dart';
 
 void main() {
   patrolTest('Validate the "Transfer Data" screen',
-      nativeAutomation: true,
       nativeAutomatorConfig: NativeAutomatorConfig(packageName: 'c.foradacaixa.foradacaixac', bundleId: 'c.foradacaixa.foradacaixac'), ($) async {
     await $.pumpWidgetAndSettle(const MyApp());
     if (Platform.isAndroid) {
@@ -62,7 +62,6 @@ void main() {
   });
 
   patrolTest('Validate the "Receipt" screen',
-      nativeAutomation: true,
       nativeAutomatorConfig: NativeAutomatorConfig(packageName: 'c.foradacaixa.foradacaixac', bundleId: 'c.foradacaixa.foradacaixac'), ($) async {
     await $.pumpWidgetAndSettle(const MyApp());
     //performs login

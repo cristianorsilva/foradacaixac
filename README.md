@@ -104,11 +104,23 @@ Projeto roda em Android e iOS;
         patrol test --target integration_test/tests/login/
     Para rodar os testes da feature Pix:
         patrol test --target integration_test/tests/pix/
+    Para ver a lista de devices conectados:
+        flutter devices
+        patrol devices
+    Para rodar em um device físico iOS*:
+        patrol test --target integration_test/tests/login --release --device 'iPhone de Cristiano'
     Para visualizar o resultado dos testes:
         Acessar menu Run > Import tests from file
         Abrir o arquivo 'test-result.pb' do caminho build/app/outputs/androidTest-results/connected
     Outra opção para visualizar os resultados:
         build/app/reports/androidTests/connected/index.html
+    *Dica importante caso o teste em device físico em iOS não funcione:
+        1 - Abra o Runner.xcworkspace no Xcode;
+        2 - No Xcode, com o projeto aberto, selecione Runner (TARGETS);
+        3 - Aba Signing & Capabilities, selecione novamente seu Team;
+        4 - Rode o projeto via Xcode no modo teste (Product > Test) com o device físico selecionado;
+        5 - Deixe rodar por um tempo;
+        6 - Volte para o Android Studio e rode novamente o comando do patrol
     
 ## Firebase Testlab (Configuração Android)
     

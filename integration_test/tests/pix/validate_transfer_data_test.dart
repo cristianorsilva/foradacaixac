@@ -16,7 +16,7 @@ import '../../screens/transfer/verify_data_screen.dart';
 import '../../share/test_extensions.dart';
 
 void main() {
-  patrolTest('Validate the "Transfer Data" screen', nativeAutomation: true, ($) async {
+  patrolTest('Validate the "Transfer Data" screen', ($) async {
     await $.pumpWidgetAndSettle(const MyApp());
     if (Platform.isAndroid) {
       //await binding.convertFlutterSurfaceToImage();

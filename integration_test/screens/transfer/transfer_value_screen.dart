@@ -12,11 +12,11 @@ class TransferValueScreen {
 
   TransferValueScreen();
 
-  Future<void> informValueToTransfer(PatrolTester $, String value) async {
+  Future<void> informValueToTransfer(PatrolIntegrationTester $, String value) async {
     await $(#inputTransferValue).enterText(value);
   }
 
-  Future<void> tapIconContinue(PatrolTester $) async {
+  Future<void> tapIconContinue(PatrolIntegrationTester $) async {
     await $(#buttonArrowContinue).tap();
   }
 }
