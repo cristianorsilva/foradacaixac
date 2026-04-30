@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:intl/intl.dart';
 import 'package:patrol/patrol.dart';
-import '../share/test_constants.dart' as constants;
+import 'test_constants.dart' as constants;
 
 Function checkTextFromWidget2(PatrolIntegrationTester $, Symbol widgetKey, String expectedText) {
   return () {

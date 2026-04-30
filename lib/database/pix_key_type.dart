@@ -58,7 +58,7 @@ class PixKeyType {
       if (count == 0) {
         EnumPixKeyType.values.forEach((enumPixKeyType) async {
           if(enumPixKeyType != EnumPixKeyType.none) {
-            await txn.rawInsert('INSERT INTO $pixKeyTypeTable($_pixKeyTypeColumn) VALUES("${describeEnum(enumPixKeyType)}")');
+            await txn.rawInsert('INSERT INTO $pixKeyTypeTable($_pixKeyTypeColumn) VALUES("${enumPixKeyType.name}")');
           }
         });
       }

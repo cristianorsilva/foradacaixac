@@ -88,7 +88,7 @@ class TransactionType {
       if (count == 0) {
         EnumTransactionType.values.forEach((enumTransactionType) async {
           if(enumTransactionType != EnumTransactionType.None) {
-            await txn.rawInsert('INSERT INTO $transactionTypeTable($_transactionTypeColumn) VALUES("${describeEnum(enumTransactionType)}")');
+            await txn.rawInsert('INSERT INTO $transactionTypeTable($_transactionTypeColumn) VALUES("${enumTransactionType.name}")');
           }
         });
       }

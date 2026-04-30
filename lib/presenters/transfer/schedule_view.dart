@@ -55,16 +55,16 @@ class _ScheduleViewState extends State<ScheduleView> {
           const Padding(padding: EdgeInsets.only(bottom: 10)),
           Text(
             'Para qual dia deseja agendar o pagamento?',
-            style: Theme.of(context).textTheme.headline1,
+            style: Theme.of(context).textTheme.titleLarge,
           ),
           const Padding(padding: EdgeInsets.only(bottom: 40)),
           RichText(
             text: TextSpan(
               children: [
-                TextSpan(text: 'Você está transferindo ', style: Theme.of(context).textTheme.bodyText2),
-                TextSpan(text: putCurrencyMask(widget.userTransaction.value), style: Theme.of(context).textTheme.headline1),
-                TextSpan(text: ' para ', style: Theme.of(context).textTheme.bodyText2),
-                TextSpan(text: widget.userTo.name, style: Theme.of(context).textTheme.headline1),
+                TextSpan(text: 'Você está transferindo ', style: Theme.of(context).textTheme.bodySmall),
+                TextSpan(text: putCurrencyMask(widget.userTransaction.value), style: Theme.of(context).textTheme.titleLarge),
+                TextSpan(text: ' para ', style: Theme.of(context).textTheme.bodySmall),
+                TextSpan(text: widget.userTo.name, style: Theme.of(context).textTheme.titleLarge),
               ],
             ),
           ),

@@ -3,7 +3,7 @@ flutter pub get
 
 date_time_run=$(date +"%d_%m_%Y_%H:%M:%S")
 
-patrol build android --target integration_test/tests/pix
+patrol build android --target patrol_test/tests/pix
 
 gcloud firebase test android run \
     --type instrumentation \
@@ -19,4 +19,4 @@ gcloud firebase test android run \
 
 # para pegar a lista de dispositivos disponíveis: gcloud firebase test android models list
 # para pegar o caminho do results-bucket, ir no firebase storage, e ver os detalhes do projeto. Copie a url criada
-# para rodar teste local: patrol test --target integration_test/tests/pix --device 'sdk gphone64 arm64'
+# para rodar teste local: patrol test --target patrol_test/tests/pix --device 'sdk gphone64 arm64'

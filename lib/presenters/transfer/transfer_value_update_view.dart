@@ -42,7 +42,7 @@ class _TransferValueUpdateViewState extends State<TransferValueUpdateView> {
         backgroundColor: Colors.transparent,
         appBar: AppBar(
           shape: const RoundedRectangleBorder(borderRadius: BorderRadius.only(topRight: Radius.circular(10), topLeft: Radius.circular(10))),
-          title: Text(widget.pageTitle, style: Theme.of(context).textTheme.headline2),
+          title: Text(widget.pageTitle, style: Theme.of(context).textTheme.titleMedium),
         ),
         body: Container(
           padding: const EdgeInsets.all(10),
@@ -50,7 +50,7 @@ class _TransferValueUpdateViewState extends State<TransferValueUpdateView> {
             children: [
               Text(
                 'Qual valor você deseja transferir?',
-                style: Theme.of(context).textTheme.headline1,
+                style: Theme.of(context).textTheme.titleLarge,
               ),
               const Padding(padding: EdgeInsets.only(bottom: 10)),
               Row(
@@ -58,11 +58,11 @@ class _TransferValueUpdateViewState extends State<TransferValueUpdateView> {
                 children: [
                   Text(
                     'Seu saldo disponível é    ',
-                    style: Theme.of(context).textTheme.headline5,
+                    style: Theme.of(context).textTheme.labelMedium,
                   ),
                   Text(
                     putCurrencyMask(widget.listUserAccount[0].accountBalance),
-                    style: Theme.of(context).textTheme.headline1,
+                    style: Theme.of(context).textTheme.titleLarge,
                   ),
                 ],
               ),
@@ -116,7 +116,7 @@ class _TransferValueUpdateViewState extends State<TransferValueUpdateView> {
         ),
       ],
       decoration: const InputDecoration(hintText: 'R\$ 0,00', counterText: ""),
-      style: Theme.of(context).textTheme.headline3,
+      style: Theme.of(context).textTheme.titleSmall,
       keyboardType: const TextInputType.numberWithOptions(),
       key: const Key('inputTransferValue'),
       onChanged: (text) {

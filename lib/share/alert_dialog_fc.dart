@@ -5,7 +5,7 @@ Future<void> showAlertDialog(String title, String message, BuildContext context,
     context: context,
     builder: (context) {
       return AlertDialog(
-        title: Text(title, key: Key(titleKey), style: Theme.of(context).textTheme.displaySmall),
+        title: Text(title, key: Key(titleKey), style: Theme.of(context).textTheme.displayLarge),
         content: Text(message, key: Key(messageKey), style: Theme.of(context).textTheme.bodyLarge),
         elevation: 2.0,
         actions: [

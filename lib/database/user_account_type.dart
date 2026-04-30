@@ -59,7 +59,7 @@ class UserAccountType {
       if (count == 0) {
         EnumAccountType.values.forEach((enumAccountType) async {
           if(enumAccountType != EnumAccountType.none) {
-            await txn.rawInsert('INSERT INTO $userAccountTypeTable($_accountTypeColumn) VALUES("${describeEnum(enumAccountType)}")');
+            await txn.rawInsert('INSERT INTO $userAccountTypeTable($_accountTypeColumn) VALUES("${enumAccountType.name}")');
           }
         });
       }

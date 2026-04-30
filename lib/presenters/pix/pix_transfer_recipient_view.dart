@@ -43,6 +43,7 @@ class _PixTransferRecipientViewState extends State<PixTransferRecipientView> {
       appBar: AppBar(
         shape: const RoundedRectangleBorder(borderRadius: BorderRadius.only(topRight: Radius.circular(10), topLeft: Radius.circular(10))),
         title: Text(widget.pageTitle, style: Theme.of(context).textTheme.displayMedium),
+        iconTheme: const IconThemeData(color: Colors.white),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
@@ -64,7 +65,7 @@ class _PixTransferRecipientViewState extends State<PixTransferRecipientView> {
         },
         backgroundColor: (_hasValue) ? Theme.of(context).floatingActionButtonTheme.backgroundColor : Theme.of(context).disabledColor,
         key: const Key('buttonArrowContinue'),
-        child: const Icon(Icons.arrow_forward_rounded),
+        child: const Icon(Icons.arrow_forward_rounded, color: Colors.white,),
       ),
       body: Container(
           padding: const EdgeInsets.all(10),
@@ -230,6 +231,7 @@ class _PixTransferRecipientViewState extends State<PixTransferRecipientView> {
         label,
         style: TextStyle(color: _enumPixKeyType == enumPixKeyType ? Colors.white : Colors.black, fontWeight: FontWeight.normal),
       ),
+      checkmarkColor: Colors.white,
       selectedColor: _enumPixKeyType == enumPixKeyType ? Theme.of(context).primaryColor : Theme.of(context).disabledColor,
       selected: _enumPixKeyType == enumPixKeyType,
       onSelected: (value) {

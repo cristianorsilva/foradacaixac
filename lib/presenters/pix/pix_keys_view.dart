@@ -23,6 +23,7 @@ class _PixKeysViewState extends State<PixKeysView> {
       appBar: AppBar(
         shape: const RoundedRectangleBorder(borderRadius: BorderRadius.only(topRight: Radius.circular(10), topLeft: Radius.circular(10))),
         title: Text('Minhas Chaves', style: Theme.of(context).textTheme.displayMedium),
+        iconTheme: const IconThemeData(color: Colors.white),
       ),
       body: Container(
         padding: const EdgeInsets.all(10),
@@ -126,14 +127,14 @@ class _PixKeysViewState extends State<PixKeysView> {
                   children: [
                     const Icon(Icons.vpn_key_rounded),
                     const Padding(padding: EdgeInsets.only(left: 10.0)),
-                    Text('Visualizar minhas chaves', style: Theme.of(context).textTheme.headline3),
+                    Text('Visualizar minhas chaves', style: Theme.of(context).textTheme.titleSmall),
                   ],
                 ),
                 const Icon(Icons.arrow_forward_ios)
               ],
             ),
             const Padding(padding: EdgeInsets.only(bottom: 12.0)),
-            Text('Visualize suas chaves cadastradas', style: Theme.of(context).textTheme.headline6),
+            Text('Visualize suas chaves cadastradas', style: Theme.of(context).textTheme.labelSmall),
           ],
         ),
       ),
@@ -159,14 +160,14 @@ class _PixKeysViewState extends State<PixKeysView> {
                   children: [
                     const Icon(Icons.add),
                     const Padding(padding: EdgeInsets.only(left: 10.0)),
-                    Text('Cadastrar uma chave', style: Theme.of(context).textTheme.headline3),
+                    Text('Cadastrar uma chave', style: Theme.of(context).textTheme.titleSmall),
                   ],
                 ),
                 const Icon(Icons.arrow_forward_ios),
               ],
             ),
             const Padding(padding: EdgeInsets.only(bottom: 12.0)),
-            Text('Cadastre uma chave nova', style: Theme.of(context).textTheme.headline6),
+            Text('Cadastre uma chave nova', style: Theme.of(context).textTheme.labelSmall),
             const Padding(padding: EdgeInsets.only(bottom: 5.0)),
           ],
         ),

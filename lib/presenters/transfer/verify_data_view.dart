@@ -58,7 +58,8 @@ class _VerifyDataViewState extends State<VerifyDataView> {
         backgroundColor: Colors.transparent,
         appBar: AppBar(
           shape: const RoundedRectangleBorder(borderRadius: BorderRadius.only(topRight: Radius.circular(10), topLeft: Radius.circular(10))),
-          title: Text(widget.pageTitle, style: Theme.of(context).textTheme.headline2),
+          title: Text(widget.pageTitle, style: Theme.of(context).textTheme.titleMedium),
+          iconTheme: const IconThemeData(color: Colors.white),
         ),
         body: SingleChildScrollView(
             key: const Key('singleChildScrowViewMain'),
@@ -70,7 +71,7 @@ class _VerifyDataViewState extends State<VerifyDataView> {
                       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                         Text(
                           'Transferindo',
-                          style: Theme.of(context).textTheme.headline1,
+                          style: Theme.of(context).textTheme.titleLarge,
                         ),
                         const Padding(padding: EdgeInsets.only(bottom: 10)),
                         _gestureDetectorTransfering(),
@@ -78,7 +79,7 @@ class _VerifyDataViewState extends State<VerifyDataView> {
                         Text(
                           _userTo!.name,
                           key: const Key('textRecipientFullUserName'),
-                          style: Theme.of(context).textTheme.bodyText2,
+                          style: Theme.of(context).textTheme.bodySmall,
                         ),
                         const Padding(padding: EdgeInsets.only(bottom: 30)),
                         const Divider(
@@ -160,7 +161,7 @@ class _VerifyDataViewState extends State<VerifyDataView> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('Quando', style: Theme.of(context).textTheme.headline4),
+            Text('Quando', style: Theme.of(context).textTheme.bodyLarge),
             const Padding(padding: EdgeInsets.only(bottom: 10.0)),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -169,7 +170,7 @@ class _VerifyDataViewState extends State<VerifyDataView> {
                   children: [
                     //TODO: sem a verificação abaixo, a data futura aparece zuada
                     Text(_paymentDate.length >= 10 ? convertDateToBrazilianFormat(DateTime.parse(_paymentDate)) : _paymentDate,
-                        key: const Key('textTransferDate'), style: Theme.of(context).textTheme.headline3),
+                        key: const Key('textTransferDate'), style: Theme.of(context).textTheme.titleSmall),
                   ],
                 ),
                 const Icon(Icons.keyboard_arrow_down_rounded)
@@ -206,10 +207,10 @@ class _VerifyDataViewState extends State<VerifyDataView> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text('Tipo de transferência', style: Theme.of(context).textTheme.headline4),
+          Text('Tipo de transferência', style: Theme.of(context).textTheme.bodyLarge),
           const Padding(padding: EdgeInsets.only(bottom: 10.0)),
-          Text(describeEnum(EnumTransactionType.values[widget.userTransaction.idTransactionType]),
-              key: const Key('textTransferType'), style: Theme.of(context).textTheme.headline3),
+          Text((EnumTransactionType.values[widget.userTransaction.idTransactionType].name),
+              key: const Key('textTransferType'), style: Theme.of(context).textTheme.titleSmall),
           const Padding(padding: EdgeInsets.only(bottom: 12.0)),
         ],
       ),
@@ -220,9 +221,9 @@ class _VerifyDataViewState extends State<VerifyDataView> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(CPFValidator.isValid(_userTo!.document) ? 'CPF' : 'CNPJ', style: Theme.of(context).textTheme.headline4),
+        Text(CPFValidator.isValid(_userTo!.document) ? 'CPF' : 'CNPJ', style: Theme.of(context).textTheme.bodyLarge),
         Text((_userTo!.document.length > 0) ? _userTo!.document.replaceRange(0, 3, "***").replaceRange(_userTo!.document.length - 2, null, "**") : "",
-            key: const Key('textRecipientDocumentNumber'), style: Theme.of(context).textTheme.bodyText2),
+            key: const Key('textRecipientDocumentNumber'), style: Theme.of(context).textTheme.bodySmall),
       ],
     );
   }
@@ -231,8 +232,8 @@ class _VerifyDataViewState extends State<VerifyDataView> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text('Instituição', style: Theme.of(context).textTheme.headline4),
-        Text(_userTo!.bankName, key: const Key('textRecipientBankName'), style: Theme.of(context).textTheme.bodyText2),
+        Text('Instituição', style: Theme.of(context).textTheme.bodyLarge),
+        Text(_userTo!.bankName, key: const Key('textRecipientBankName'), style: Theme.of(context).textTheme.bodySmall),
       ],
     );
   }
@@ -241,8 +242,8 @@ class _VerifyDataViewState extends State<VerifyDataView> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text('Agência', style: Theme.of(context).textTheme.headline4),
-        Text(_userTo!.agency, key: const Key('textRecipientAgencyNumber'), style: Theme.of(context).textTheme.bodyText2),
+        Text('Agência', style: Theme.of(context).textTheme.bodyLarge),
+        Text(_userTo!.agency, key: const Key('textRecipientAgencyNumber'), style: Theme.of(context).textTheme.bodySmall),
       ],
     );
   }
@@ -251,8 +252,8 @@ class _VerifyDataViewState extends State<VerifyDataView> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text('Conta corrente', style: Theme.of(context).textTheme.headline4),
-        Text(_userTo!.account, key: const Key('textRecipientAccountNumber'), style: Theme.of(context).textTheme.bodyText2),
+        Text('Conta corrente', style: Theme.of(context).textTheme.bodyLarge),
+        Text(_userTo!.account, key: const Key('textRecipientAccountNumber'), style: Theme.of(context).textTheme.bodySmall),
       ],
     );
   }

@@ -19,7 +19,7 @@ class CircularButtonFC extends StatelessWidget {
       children: [
         SizedBox(
             width: 60,
-            height: 50,
+            height: 60,
             child: Card(
               shape: const CircleBorder(),
               clipBehavior: Clip.hardEdge,
