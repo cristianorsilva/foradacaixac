@@ -34,7 +34,9 @@ class _PixInsertNewKeyViewState extends State<PixInsertNewKeyView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(),
+        appBar: AppBar(
+          iconTheme: const IconThemeData(color: Colors.white),
+        ),
         body: Stack(children: [
           Container(
             padding: const EdgeInsets.all(10),
@@ -44,7 +46,7 @@ class _PixInsertNewKeyViewState extends State<PixInsertNewKeyView> {
                 children: [
                   Text(_definePixKeyNameOnPage(widget.enumPixKeyType), style: Theme.of(context).textTheme.headlineLarge),
                   const Padding(padding: EdgeInsets.only(top: 15.0)),
-                  Text(_definePixKeyDescriptionOnPage(widget.enumPixKeyType), style: Theme.of(context).textTheme.titleLarge),
+                  Text(_definePixKeyDescriptionOnPage(widget.enumPixKeyType), style: Theme.of(context).textTheme.labelSmall),
                   const Padding(padding: EdgeInsets.only(top: 50.0)),
                   _visibilityCPFCNPJ(),
                   _visibilityAleatoryKey(),
@@ -150,7 +152,7 @@ class _PixInsertNewKeyViewState extends State<PixInsertNewKeyView> {
                 ? true
                 : false,
         child: FloatingActionButton(
-          child: const Icon(Icons.navigate_next_rounded),
+          child: const Icon(Icons.arrow_forward_rounded, color: Colors.white,),
           onPressed: () async {
             bool isValid = false;
             Database db = await DatabaseHelper().initDb();
@@ -181,7 +183,7 @@ class _PixInsertNewKeyViewState extends State<PixInsertNewKeyView> {
                   userPixKey.keyPix = _textPixKeyTelefoneController.text;
                   List<PixKeyType> listTypePixKey = await PixKeyType().getAllPixKeysType(db);
                   userPixKey.idTypePixKey =
-                      listTypePixKey.where((typePixKey) => typePixKey.pixKeyType == describeEnum(EnumPixKeyType.telefone)).first.id;
+                      listTypePixKey.where((typePixKey) => typePixKey.pixKeyType == (EnumPixKeyType.telefone.name)).first.id;
                   userPixKey.idUser = widget.user.id;
 
                   break;
@@ -215,16 +217,16 @@ class _PixInsertNewKeyViewState extends State<PixInsertNewKeyView> {
       child: Stack(
         children: [
           Container(
-              height: 200,
+              height: 220,
               padding: const EdgeInsets.all(10),
               child: Column(
                 children: [
                   SingleChildScrollView(
                       child: Column(children: [
                     Text('Quem usa Pix vai saber que você tem uma chave cadastrada por telefone ou e-mail, mas não terá acesso aos seus dados',
-                        style: Theme.of(context).textTheme.titleLarge),
+                        style: Theme.of(context).textTheme.labelSmall),
                     Text('Quem te pagar por Pix poderá ver seu nome completo e alguns dígitos do seu CPF.',
-                        style: Theme.of(context).textTheme.titleLarge),
+                        style: Theme.of(context).textTheme.labelSmall),
                     const Padding(padding: EdgeInsets.only(top: 25.0)),
                     _elevatedButtonFCRegisterKey()
                   ])),
@@ -251,7 +253,7 @@ class _PixInsertNewKeyViewState extends State<PixInsertNewKeyView> {
         switch (widget.enumPixKeyType) {
           case EnumPixKeyType.cpf_cnpj:
             List<PixKeyType> listTypePixKey = await PixKeyType().getAllPixKeysType(db);
-            userPixKey.idTypePixKey = listTypePixKey.where((typePixKey) => typePixKey.pixKeyType == describeEnum(EnumPixKeyType.cpf_cnpj)).first.id;
+            userPixKey.idTypePixKey = listTypePixKey.where((typePixKey) => typePixKey.pixKeyType == (EnumPixKeyType.cpf_cnpj.name)).first.id;
             userPixKey.idUser = widget.user.id;
             userPixKey.keyPix = widget.user.document;
 
@@ -266,7 +268,7 @@ class _PixInsertNewKeyViewState extends State<PixInsertNewKeyView> {
 
             List<PixKeyType> listTypePixKey = await PixKeyType().getAllPixKeysType(db);
             userPixKey.idTypePixKey =
-                listTypePixKey.where((typePixKey) => typePixKey.pixKeyType == describeEnum(EnumPixKeyType.chave_aleatoria)).first.id;
+                listTypePixKey.where((typePixKey) => typePixKey.pixKeyType == (EnumPixKeyType.chave_aleatoria.name)).first.id;
             userPixKey.idUser = widget.user.id;
             userPixKey.keyPix = aleatoryKey;
 

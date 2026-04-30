@@ -62,7 +62,7 @@ class _HomeViewState extends State<HomeView> {
 
   Container _operations() {
     return Container(
-      height: 125.0,
+      height: 140.0,
       padding: const EdgeInsets.all(10),
       child: SingleChildScrollView(
         scrollDirection: Axis.horizontal,
@@ -116,7 +116,7 @@ class _HomeViewState extends State<HomeView> {
               Text(
                 'Olá, ${widget.user.name.split(" ").first}',
                 key: const Key('textWelcomeUserName'),
-                style: Theme.of(context).textTheme.headline2,
+                style: Theme.of(context).textTheme.titleMedium,
               )
             ],
           ),
@@ -205,7 +205,7 @@ class _HomeViewState extends State<HomeView> {
                   children: [
                     const Icon(Icons.account_balance),
                     const Padding(padding: EdgeInsets.only(left: 10.0)),
-                    Text('Conta', style: Theme.of(context).textTheme.headline3),
+                    Text('Conta', style: Theme.of(context).textTheme.titleSmall),
                   ],
                 ),
                 const Icon(Icons.arrow_forward_ios)
@@ -250,14 +250,14 @@ class _HomeViewState extends State<HomeView> {
                   children: [
                     const Icon(Icons.credit_card),
                     const Padding(padding: EdgeInsets.only(left: 10.0)),
-                    Text('Cartão', style: Theme.of(context).textTheme.headline3),
+                    Text('Cartão', style: Theme.of(context).textTheme.titleSmall),
                   ],
                 ),
                 const Icon(Icons.arrow_forward_ios),
               ],
             ),
             const Padding(padding: EdgeInsets.only(bottom: 12.0)),
-            Text('Fatura atual', style: Theme.of(context).textTheme.headline6),
+            Text('Fatura atual', style: Theme.of(context).textTheme.labelSmall),
             const Padding(padding: EdgeInsets.only(bottom: 5.0)),
             Text(
               _hideValues ? 'R\$ ---,--' : 'R\$ 345,50',

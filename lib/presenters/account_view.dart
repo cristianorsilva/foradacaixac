@@ -35,7 +35,8 @@ class _AccountViewState extends State<AccountView> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('Minha Conta', style: Theme.of(context).textTheme.headline2),
+          title: Text('Minha Conta', style: Theme.of(context).textTheme.titleMedium),
+          iconTheme: const IconThemeData(color: Colors.white),
         ),
         body: Container(
             padding: const EdgeInsets.only(left: 15, right: 15),
@@ -44,7 +45,7 @@ class _AccountViewState extends State<AccountView> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const Padding(padding: EdgeInsets.only(top: 30)),
-                Text('Saldo em Conta Corrente', style: Theme.of(context).textTheme.headline4),
+                Text('Saldo em Conta Corrente', style: Theme.of(context).textTheme.bodyLarge),
                 const Padding(padding: EdgeInsets.only(top: 5)),
                 Text(putCurrencyMask(widget.listUserAccount[0].accountBalance), style: Theme.of(context).textTheme.headlineLarge),
                 const Padding(padding: EdgeInsets.only(top: 30)),
@@ -58,7 +59,7 @@ class _AccountViewState extends State<AccountView> {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text('Saldo em Conta Poupança', style: Theme.of(context).textTheme.headline4),
+                          Text('Saldo em Conta Poupança', style: Theme.of(context).textTheme.bodyLarge),
                           const Padding(padding: EdgeInsets.only(top: 5)),
                           const Text('R\$ 825,69', style: TextStyle(fontWeight: FontWeight.bold)),
                         ],
@@ -153,9 +154,9 @@ class _AccountViewState extends State<AccountView> {
                     ),
                     Text(
                       _listNameUserToByTransaction.isNotEmpty ? _listNameUserToByTransaction[index] : 'Erro',
-                      style: Theme.of(context).textTheme.titleLarge,
+                      style: Theme.of(context).textTheme.labelSmall,
                     ),
-                    Text(putCurrencyMask(_listUserTransaction[index].value), style: Theme.of(context).textTheme.headline6),
+                    Text(putCurrencyMask(_listUserTransaction[index].value), style: Theme.of(context).textTheme.labelSmall),
                     const Padding(
                       padding: EdgeInsets.only(bottom: 10),
                     ),
@@ -163,7 +164,7 @@ class _AccountViewState extends State<AccountView> {
                 ),
               ],
             ),
-            Text(convertDateToBrazilianFormat(DateTime.parse(_listUserTransaction[index].dateHour)), style: Theme.of(context).textTheme.headline6),
+            Text(convertDateToBrazilianFormat(DateTime.parse(_listUserTransaction[index].dateHour)), style: Theme.of(context).textTheme.labelSmall),
 
             //TODO: adicionar gesture detector
             //TODO: não atualizou o isScheduled com o app aberto
@@ -208,16 +209,16 @@ class _AccountViewState extends State<AccountView> {
       DateTime dateTimeNow = DateTime.now();
       if (DateTime.parse(formatter.format(DateTime.now())).difference(DateTime.parse(_listUserTransaction[index].dateHour.substring(0, 10))).inDays >=
           0) {
-        defineText = Text('Transferência enviada', style: Theme.of(context).textTheme.headline5);
+        defineText = Text('Transferência enviada', style: Theme.of(context).textTheme.labelMedium);
       } else {
-        defineText = Text('Transferência agendada', style: Theme.of(context).textTheme.headline5);
+        defineText = Text('Transferência agendada', style: Theme.of(context).textTheme.labelMedium);
       }
     } else {
       if (DateTime.parse(formatter.format(DateTime.now())).difference(DateTime.parse(_listUserTransaction[index].dateHour.substring(0, 10))).inDays >=
           0) {
-        defineText = Text('Transferência recebida', style: Theme.of(context).textTheme.headline5);
+        defineText = Text('Transferência recebida', style: Theme.of(context).textTheme.labelMedium);
       } else {
-        defineText = Text('Transferência a ser recebida', style: Theme.of(context).textTheme.headline5);
+        defineText = Text('Transferência a ser recebida', style: Theme.of(context).textTheme.labelMedium);
       }
     }
     return defineText;

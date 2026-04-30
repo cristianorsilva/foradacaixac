@@ -30,7 +30,8 @@ class _TransferValueViewState extends State<TransferValueView> {
       backgroundColor: Colors.transparent,
       appBar: AppBar(
         shape: const RoundedRectangleBorder(borderRadius: BorderRadius.only(topRight: Radius.circular(10), topLeft: Radius.circular(10))),
-        title: Text(widget.pageTitle, style: Theme.of(context).textTheme.headline2),
+        title: Text(widget.pageTitle, style: Theme.of(context).textTheme.titleMedium),
+        iconTheme: const IconThemeData(color: Colors.white),
       ),
       floatingActionButton: _floatingActionButton(),
       body: Container(
@@ -39,7 +40,7 @@ class _TransferValueViewState extends State<TransferValueView> {
           children: [
             Text(
               'Qual valor você deseja transferir?',
-              style: Theme.of(context).textTheme.headline1,
+              style: Theme.of(context).textTheme.titleLarge,
             ),
 
             const Padding(padding: EdgeInsets.only(bottom: 10)),
@@ -48,11 +49,11 @@ class _TransferValueViewState extends State<TransferValueView> {
               children: [
                 Text(
                   'Seu saldo disponível é    ',
-                  style: Theme.of(context).textTheme.headline5,
+                  style: Theme.of(context).textTheme.labelMedium,
                 ),
                 Text(
                   putCurrencyMask(widget.listUserAccount[0].accountBalance),
-                  style: Theme.of(context).textTheme.headline1,
+                  style: Theme.of(context).textTheme.titleLarge,
                   key: const Key('textAvailableBalance'),
                 ),
               ],
@@ -78,7 +79,7 @@ class _TransferValueViewState extends State<TransferValueView> {
         ),
       ],
       decoration: const InputDecoration(hintText: 'R\$ 0,00', counterText: ""),
-      style: Theme.of(context).textTheme.headline3,
+      style: Theme.of(context).textTheme.titleSmall,
       onChanged: (text) {
         setState(() {
           if (text.isNotEmpty) {
@@ -109,7 +110,7 @@ class _TransferValueViewState extends State<TransferValueView> {
       },
       backgroundColor: (widget.userTransaction.value > 0) ? Theme.of(context).floatingActionButtonTheme.backgroundColor : Theme.of(context).disabledColor,
       key: const Key('buttonArrowContinue'),
-      child: const Icon(Icons.arrow_forward_rounded),
+      child: const Icon(Icons.arrow_forward_rounded, color: Colors.white,),
     );
   }
 }

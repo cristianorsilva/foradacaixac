@@ -87,7 +87,7 @@ class _PixViewState extends State<PixView> {
 
   Widget customCardPix(String labelButton, String imageName, Type page, String pageTitle, String key) {
     return SizedBox(
-        width: 105,
+        width: 115,
         height: 120,
         child: Card(
           child: InkWell(
@@ -116,7 +116,7 @@ class _PixViewState extends State<PixView> {
               Database db = await DatabaseHelper().initDb();
 
               if (identical(page, TransferValueView)) {
-                TransactionType? transactionType = await TransactionType().getTransactionType(describeEnum(EnumTransactionType.Pix), db);
+                TransactionType? transactionType = await TransactionType().getTransactionType((EnumTransactionType.Pix.name), db);
                 int idTransactionType = transactionType!.id;
                 userTransaction.idTransactionType = idTransactionType;
                 if(!mounted) return;

@@ -101,7 +101,7 @@ class UserPixKey {
         listUsers.forEach((user) async {
           await txn.rawInsert('INSERT INTO $userPixKeyTable('
               '$_idUserColumn, $_idTypePixKeyColumn, $_keyPixColumn) VALUES'
-              '(${user.id},${listTypePixKey.where((typePixKey) => typePixKey.pixKeyType == describeEnum(EnumPixKeyType.cpf_cnpj)).first.id}, "${user.document}")');
+              '(${user.id},${listTypePixKey.where((typePixKey) => typePixKey.pixKeyType == (EnumPixKeyType.cpf_cnpj.name)).first.id}, "${user.document}")');
         });
       }
     });

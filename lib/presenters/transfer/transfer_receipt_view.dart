@@ -62,17 +62,17 @@ class _TransferReceiptViewState extends State<TransferReceiptView> {
           ),
           const Padding(padding: EdgeInsets.only(bottom: 10)),
           Text(widget.userTransaction.isScheduled == 1 ? 'Transferência agendada' : 'Comprovante de transferência',
-              key: const Key('textReceiptTitle'), style: Theme.of(context).textTheme.headline1),
+              key: const Key('textReceiptTitle'), style: Theme.of(context).textTheme.titleLarge),
           const Padding(padding: EdgeInsets.only(bottom: 15)),
           Text(
               convertDateToBrazilianFormat(DateTime.parse(widget.userTransaction.dateHour),
                   shownOnlyDate: widget.userTransaction.isScheduled == 1 ? true : false),
               key: const Key('textTransferDate'),
-              style: Theme.of(context).textTheme.headline6),
+              style: Theme.of(context).textTheme.labelSmall),
           const Padding(padding: EdgeInsets.only(bottom: 15)),
 
           _infoUser('Valor', putCurrencyMask(widget.userTransaction.value), 'textTransferValue'),
-          _infoUser('Tipo de Transferência', describeEnum(EnumTransactionType.values[widget.userTransaction.idTransactionType]), 'textTransferType'),
+          _infoUser('Tipo de Transferência', (EnumTransactionType.values[widget.userTransaction.idTransactionType].name), 'textTransferType'),
 
           const Divider(
             height: 0,
@@ -84,7 +84,7 @@ class _TransferReceiptViewState extends State<TransferReceiptView> {
             children: [
               const Icon(Icons.payment),
               const Padding(padding: EdgeInsets.only(left: 15)),
-              Text('Destino', style: Theme.of(context).textTheme.headline3),
+              Text('Destino', style: Theme.of(context).textTheme.titleSmall),
             ],
           ),
           const Padding(padding: EdgeInsets.only(bottom: 15)),
@@ -110,7 +110,7 @@ class _TransferReceiptViewState extends State<TransferReceiptView> {
             children: [
               const Icon(Icons.payment),
               const Padding(padding: EdgeInsets.only(left: 15)),
-              Text('Origem', style: Theme.of(context).textTheme.headline3),
+              Text('Origem', style: Theme.of(context).textTheme.titleSmall),
             ],
           ),
           const Padding(padding: EdgeInsets.only(bottom: 15)),
@@ -127,8 +127,8 @@ class _TransferReceiptViewState extends State<TransferReceiptView> {
           _infoUser('Conta', widget.userFrom.account, 'textSenderAccountNumber'),
           _infoUser('Tipo de conta', 'Conta Corrente', 'textSenderAccountType'),
           const Padding(padding: EdgeInsets.only(top: 15)),
-          Text('ID da transação:', style: Theme.of(context).textTheme.headline6),
-          Text('E7565486895648s89657978BH', key: const Key('textTransactionID'), style: Theme.of(context).textTheme.headline6),
+          Text('ID da transação:', style: Theme.of(context).textTheme.labelSmall),
+          Text('E7565486895648s89657978BH', key: const Key('textTransactionID'), style: Theme.of(context).textTheme.labelSmall),
         ]));
   }
 
@@ -139,12 +139,12 @@ class _TransferReceiptViewState extends State<TransferReceiptView> {
         children: [
           Text(
             labelName,
-            style: Theme.of(context).textTheme.headline5,
+            style: Theme.of(context).textTheme.labelMedium,
           ),
           Text(
             labelValue,
             key: Key(keyData),
-            style: Theme.of(context).textTheme.headline6,
+            style: Theme.of(context).textTheme.labelSmall,
           ),
         ],
       ),

@@ -80,14 +80,14 @@ Projeto roda em Android e iOS;
     Se patrol_client não está instalado:
         dart pub global activate patrol_cli
 
-    Antes de tudo, é preciso criar os diretórios 'integration_test
-        Em 'test_driver' criar o arquivo integration_test.dart
-        Em 'integration_test' criar o diretório 'screens'
+    Antes de tudo, é preciso criar os diretórios 'patrol_test
+        Em 'test_driver' criar o arquivo patrol_test.dart
+        Em 'patrol_test' criar o diretório 'screens'
             No diretório 'screens' haverão arquivos estilo 'page_object' (todos com sufixo _screen)
-        Em 'integration_test criar o diretório 'tests'
+        Em 'patrol_test criar o diretório 'tests'
             No diretório 'tests' haverão arquivos de testes propriamente ditos
     
-    Dentro do diretório integration_test/tests é preciso organizar os testes por 'Features':
+    Dentro do diretório patrol_test/tests é preciso organizar os testes por 'Features':
         Login: contém os testes de login (1 teste por arquivo .dart)
         Pix: contém os testes de pix (1 teste por arquivo .dart)
 
@@ -101,14 +101,14 @@ Projeto roda em Android e iOS;
 ## Executando os testes localmente
     
     Para rodar os testes da feature Login:
-        patrol test --target integration_test/tests/login/
+        patrol test --target patrol_test/tests/login/
     Para rodar os testes da feature Pix:
-        patrol test --target integration_test/tests/pix/
+        patrol test --target patrol_test/tests/pix/
     Para ver a lista de devices conectados:
         flutter devices
         patrol devices
     Para rodar em um device físico iOS*:
-        patrol test --target integration_test/tests/login --release --device 'iPhone de Cristiano'
+        patrol test --target patrol_test/tests/login --release --device 'iPhone de Cristiano'
     Para visualizar o resultado dos testes:
         Acessar menu Run > Import tests from file
         Abrir o arquivo 'test-result.pb' do caminho build/app/outputs/androidTest-results/connected
@@ -129,9 +129,9 @@ Projeto roda em Android e iOS;
         https://patrol.leancode.co/ci/firebase-test-lab
     Comando para criar os apks com o ponto de entrada (entry points) dos testes desejados:
         Testes da Feature Login:
-            patrol build android --target integration_test/tests/login
+            patrol build android --target patrol_test/tests/login
         Testes da Feature Pix:
-            patrol build android --target integration_test/tests/pix
+            patrol build android --target patrol_test/tests/pix
 
 ## Firebase TestLab (Subindo os apks para testar Android)
 
@@ -176,8 +176,8 @@ Projeto roda em Android e iOS;
         Atualizar o conteúdo de RunnerUITests.m conforme solicitado na página
         Atualizar o ios/Podfile conforme solicitado na página
         No Android studio:
-            Criar o arquivo integration_test/example_test.dart
-            Executar o comando no terminal: flutter build ios --config-only integration_test/example_test.dart
+            Criar o arquivo patrol_test/example_test.dart
+            Executar o comando no terminal: flutter build ios --config-only patrol_test/example_test.dart
             Abrir um terminal no caminho ios e executar: pod install --repo-update
         De volta ao Xcode, abrir Runner.xcworkspace:
             Certifique-se que as configurações de Build estão corretas (sessão Configurations)
@@ -187,7 +187,7 @@ Projeto roda em Android e iOS;
             Adicione os códigos requeridos nessas duas novas Build Phases
         Desabilite a 'execução paralela' conforme mostrado no video da página
     Para testar as configurações, selecione um simulador iOS e execute no terminal o comando abaixo:
-        patrol test -t integration_test/tests/login/successful_login_test.dart
+        patrol test -t patrol_test/tests/login/successful_login_test.dart
         (ou algum outro arquivo de teste)
 
 
@@ -224,3 +224,23 @@ Projeto roda em Android e iOS;
 
 ## Dica para modificar ícones dos apps
     https://medium.com/flutter-community/change-flutter-app-launcher-icon-59c31bcd7554
+
+## Sobre o FVM
+    Comandos básicos:
+        fvm list
+        mostra todas as versões instaladas do flutter via fvm
+
+        fvm releases
+        mostra todas as versões do flutter existentes
+
+        fvm install 3.19.2
+        instala a versão 3.19.2
+        ainda vai precisar setar, pois se fizer fvm list irá aparecer a versão como ‘Need setup’
+
+        fvm global 3.19.2
+        será a versão global para o sistema
+
+        Após isso, executar o comando ‘fvm use 3.19.0’ para que o projeto passe a utilizar a versão 3.19.0
+            fvm flutter clean
+            fvm flutter pub get
+            fvm flutter run

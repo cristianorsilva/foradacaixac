@@ -32,7 +32,7 @@ class HeadModalBottomSheet extends StatelessWidget {
             Text(
               title,
               key: key,
-              style: Theme.of(context).textTheme.headline2,
+              style: Theme.of(context).textTheme.titleMedium,
             )
           ]),
         ],

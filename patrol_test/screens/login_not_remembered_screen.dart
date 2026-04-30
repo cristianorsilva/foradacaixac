@@ -19,19 +19,27 @@ class LoginNotRememberedScreen {
   Future<void> grandPermissionIfRequired(PatrolIntegrationTester $) async {
     if (Platform.isIOS && Platform.localeName == "pt_BR") { //useful when language is different from en_US on iOS
       if (!await Permission.location.isGranted) {
-        await $.native.tap(
-          Selector(text: 'Permitir Durante o Uso do App'),
+        await $.platform.ios.tap(
+          IOSSelector(text: 'Permitir Durante o Uso do App'),
           appId: 'com.apple.springboard',
-        ).onError((error, stackTrace) => print(error.toString()));
+        );
       }
     }else {
       if (!await Permission.location.isGranted) {
-        if (await $.native.isPermissionDialogVisible(timeout: _timeout)) {
-          await $.native.grantPermissionWhenInUse();
+        if (await $.platform.mobile.isPermissionDialogVisible(timeout: _timeout)) {
+          await $.platform.mobile.grantPermissionWhenInUse();
         }
         await $.pump();
       }
     }
+
+
+
+
+
+
+
+
   }
 
   Future<void> tapButtonLogin(PatrolIntegrationTester $) async {
